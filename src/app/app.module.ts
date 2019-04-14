@@ -7,12 +7,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import {CountryServiceService} from './shared/service/country-service.service';
 import {HttpClientModule} from '@angular/common/http';
+import { AirportListComponent } from './airport-list/airport-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
-    DashboardComponent
+    DashboardComponent,
+    AirportListComponent
   ],
   imports: [
     BrowserModule,

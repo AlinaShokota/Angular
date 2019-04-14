@@ -10,6 +10,6 @@ export class CountryServiceService {
 
   constructor(private http: HttpClient) { }
   getAllCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8888/user/all');
+    return this.http.get<Country[]>('http://localhost:8085/app/airport/all');
   }
 }

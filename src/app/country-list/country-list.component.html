@@ -4,15 +4,15 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Continent</th>
+      <th scope="col">City</th>
     </tr>
     </thead>
     <tbody>
     
     <tr *ngFor="let country of countries ">
-      <th scope="row">1</th>
+      <th scope="row">{{country.id}}</th>
       <td>{{country.name}}</td>
-      <td>{{country.age}}</td>
+      <td>{{country.cityId.name}}</td>
     </tr>
 
 
