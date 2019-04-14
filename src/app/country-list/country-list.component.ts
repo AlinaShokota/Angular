@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Country} from '../shared/model/country';
+import {CountryServiceService} from '../shared/service/country-service.service';
 
 @Component({
   selector: 'app-country-list',
@@ -8,15 +9,13 @@ import {Country} from '../shared/model/country';
 })
 export class CountryListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private countryService: CountryServiceService) { }
 
   countries: Country[] = new Array();
   ngOnInit() {
-    const country: Country = new Country();
-    country.id = 1;
-    country.name = 'Poland';
-    country.continentId = 70;
-    this.countries[0] = country;
+    this.countryService.getAllCountries().subscribe(value => {
+      this.countries = value;
+    });
     console.log(this.countries);
   }
 

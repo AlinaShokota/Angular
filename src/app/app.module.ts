@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import {CountryServiceService} from './shared/service/country-service.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CountryServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
