@@ -1,4 +1,21 @@
-<p>
-  country-list works!
-</p>
-<button type="button" class="btn btn-primary">Primary</button>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Continent</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr *ngFor="let country of countries ">
+      <th scope="row">1</th>
+      <td>{{country.name}}</td>
+      <td>{{country.continentId}}</td>
+    </tr>
+
+
+    </tbody>
+  </table>
+</div>
