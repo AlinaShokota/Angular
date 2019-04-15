@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import {CountryServiceService} from './shared/service/country-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { AirportListComponent } from './airport-list/airport-list.component';
+import { CityListComponent } from './city-list/city-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
     DashboardComponent,
-    AirportListComponent
+    AirportListComponent,
+    CityListComponent
   ],
   imports: [
     BrowserModule,

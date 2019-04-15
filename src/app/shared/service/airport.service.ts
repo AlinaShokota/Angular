@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Country} from '../model/country';
+import {Airport} from '../model/airport';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CountryServiceService {
+export class AirportService {
 
   constructor(private http: HttpClient) { }
-  getAllCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8085/app/country/all');
+  getAllAirports(): Observable<Airport[]> {
+    return this.http.get<Airport[]>('http://localhost:8085/app/airport/all');
   }
 }
