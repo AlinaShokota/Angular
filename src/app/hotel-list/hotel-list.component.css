@@ -1,0 +1,16 @@
+.form{
+  background-color: rgba(189, 220, 227, 0.8);
+  padding: 3%;
+  margin-top: 5%;
+}
+.btn{
+  background-color: #48767A;
+  color: white;
+}
+.container{
+  background-color: rgba(189, 220, 227, 0.8);
+margin-top: 3%;
+}
+.table{
+  background-color: white;
+}

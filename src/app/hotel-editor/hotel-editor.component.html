@@ -1,0 +1,34 @@
+<div class="container">
+<h1 class="card-title">Add new hotel</h1>
+<form (ngSubmit)="onSave()" #userForm="ngForm">
+  <input type="hidden" name="id" [(ngModel)]="hotel.id">
+  <div class="form-group">
+    <label for="name"><h2>Name</h2></label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="insert hotel name" required [(ngModel)]="hotel.name">
+  </div>
+  <div class="form-group">
+    <label for="standard"><h2>Standard</h2></label>
+    <select class="form-control" id="standard" name="standard" [(ngModel)]="hotel.standard" required>
+      <option>One star</option>
+      <option>Two stars</option>
+      <option>Three stars</option>
+      <option >Four stars</option>
+      <option >Five stars</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="description"><h2>Description</h2></label>
+    <input type="text" class="form-control" name="description" id="description" placeholder="insert description" required [(ngModel)]="hotel.description">
+  </div>
+  <div class="form-group">
+    <label for="cities"><h2>City</h2></label>
+    <select class="form-control" id="cities" [(ngModel)]="hotel.cityId" name="hotelId" required>
+      <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+    </select>
+  </div>
+  <button type="button" class="btn btn-warning" (click)="goBack()">Back</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+

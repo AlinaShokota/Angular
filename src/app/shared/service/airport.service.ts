@@ -12,4 +12,7 @@ export class AirportService {
   getAllAirports(): Observable<Airport[]> {
     return this.http.get<Airport[]>('http://localhost:8085/app/airport/all');
   }
+  getAirportsInPoland(): Observable<Airport[]> {
+    return this.http.get<Airport[]>('http://localhost:8085/app/airport//airports-in-Poland');
+  }
 }

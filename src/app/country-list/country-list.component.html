@@ -2,7 +2,7 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th scope="col">#</th>
+      <!--<th scope="col">#</th>-->
       <th scope="col">Name</th>
       <th scope="col">Continent</th>
     </tr>
@@ -10,12 +10,13 @@
     <tbody>
     
     <tr *ngFor="let country of countries ">
-      <th scope="row">{{country.id}}</th>
-      <td>{{country.name}}</td>
-      <td>{{country.continentId.continentName}}</td>
-    </tr>
+      <!--<th scope="row">{{country.id}}</th>-->
+     <td>{{country.name}}</td>
+     <td>{{country.continentId.continentName}}</td>
+
+   </tr>
 
 
-    </tbody>
-  </table>
+   </tbody>
+ </table>
 </div>

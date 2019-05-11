@@ -1,0 +1,129 @@
+<div class="content">
+</div>
+
+<div class="form">
+  <form>
+    <table>
+      <tr>
+        <td>
+          From:
+          <select>
+            <option size="10" *ngFor="let city of citiesInPoland" [value]="cityFrom">{{city.name}}</option>
+          </select>
+        </td>
+        <td>
+          To:
+          <select>
+            <option *ngFor="let city of cities" [value]="cityTo">{{city.name}}</option>
+          </select>
+        </td>
+        <td>
+          Departure date:
+          <input type="date" name="departureDate">
+        </td>
+        <td>
+          Return date:
+          <input type="date" name="returnDate">
+        </td>
+        <td>
+          Count of days:
+          <input type="number" name="countOfDays">
+        </td>
+        <td>
+          Adults: <input type="number" name="adults">
+        </td>
+        <td>
+          Children: <input type="number" name="children">
+        </td>
+        <td>
+          <button type="submit" class="btn">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+
+<div class="container">
+  <h1 class="card-title">All trips</h1>
+  <div class="card">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td *ngFor="let trip of trips " width="30%">
+          <p class="card--content">From: {{trip.airportFrom.name}}</p>
+          <p class="card--content">To: {{trip.airportTo.name}}</p>
+          <p class="card--content">City: {{trip.cityTo.name}}</p>
+          <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+          <p class="card--content">Departure: {{trip.departureDate}}</p>
+          <p class="card--content">Return: {{trip.returnDate}}</p>
+          <p class="card--content">Price for adult: {{trip.priceForAdult}}</p>
+          <p class="card--content">Price for child: {{trip.priceForChild}}</p>
+          <!--<p class="card--content"><a routerLink="/one-trip">Read more</a></p>-->
+          <button  routerLink="/one-trip/{{trip.id}}" >Read more</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="card-title">Promotion trips</h1>
+  <div class="card">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td *ngFor="let trip of promotionTrips " width="30%">
+          <p class="card--content">From: {{trip.airportFrom.name}}</p>
+          <p class="card--content">To: {{trip.airportTo.name}}</p>
+          <p class="card--content">City: {{trip.cityTo.name}}</p>
+          <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+          <p class="card--content">Departure: {{trip.departureDate}}</p>
+          <p class="card--content">Return: {{trip.returnDate}}</p>
+          <p class="card--content">Price for adult: {{trip.priceForAdult}}</p>
+          <p class="card--content">Price for child: {{trip.priceForChild}}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="card-title">Nearest trips</h1>
+  <div class="card">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td *ngFor="let trip of nearestTrips " width="30%">
+          <p class="card--content">From: {{trip.airportFrom.name}}</p>
+          <p class="card--content">To: {{trip.airportTo.name}}</p>
+          <p class="card--content">City: {{trip.cityTo.name}}</p>
+          <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+          <p class="card--content">Departure: {{trip.departureDate}}</p>
+          <p class="card--content">Return: {{trip.returnDate}}</p>
+          <p class="card--content">Price for adult: {{trip.priceForAdult}}</p>
+          <p class="card--content">Price for child: {{trip.priceForChild}}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="card-title">Destinations</h1>
+  <table width="100%" border="1">
+    <tr class="destinations">
+      <td class="europe" height="150" width="300"><a routerLink="/country-list">Europe</a></td>
+      <td class="asia" height="150" width="300"><a routerLink="/country-list">Asia</a></td>
+      <td class="australia" height="150" width="300"><a routerLink="/country-list">Australia</a></td>
+      <td class="samerica" height="150" width="300"><a routerLink="/country-list">South <br>America</a></td>
+      <td class="namerica" height="150" width="300"><a routerLink="/country-list">North <br>America</a></td>
+      <td class="africa" height="150" width="300"><a routerLink="/country-list">Africa</a></td>
+    </tr>
+  </table>
+</div>
+
+
+

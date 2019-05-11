@@ -12,4 +12,7 @@ export class CityService {
   getAllCities(): Observable<City[]> {
     return this.http.get<City[]>('http://localhost:8085/app/city/all');
   }
+  getAllCitiesInPoland(): Observable<City[]> {
+    return this.http.get<City[]>('http://localhost:8085/app/city/in-Poland');
+  }
 }

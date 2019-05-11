@@ -1,0 +1,93 @@
+
+.content {
+  background-image: url("~src/app/images/TravellingTips_TOPBANNER.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 20%;
+  margin-top: -5%;
+}
+.container{
+  padding: 2%;
+}
+
+.form {
+  background-size: cover;
+  width: content-box;
+  background-color: rgba(175, 217, 227, 0.47);
+  margin-top: -4%;
+  padding: 2%;
+  color: black;
+  font-family: "Comic Sans MS", cursive;
+  text-align: left;
+}
+
+.card {
+  background-image: url("~src/app/images/backgr.jpg");
+  background-size: 30%;
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  overflow-x: auto;
+  display: flex;
+  margin-top: 2%;
+}
+
+.card--content {
+  background-color: rgba(189, 220, 227, 0.8);
+  min-width: 300px;
+  margin: 0;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+.card-title{
+  font-size: 250%;
+}
+.btn{
+  background-color: #48767A;
+  color: white;
+}
+
+
+
+
+.europe{
+  background-image: url("~src/app/images/eu.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.asia{
+  background-image: url("~src/app/images/asia.jpg");
+  background-size: 105%;
+  background-repeat: no-repeat;
+}
+.australia{
+  background-image: url("~src/app/images/au.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.samerica{
+  background-image: url("~src/app/images/sa.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.namerica{
+  background-image: url("~src/app/images/na.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.africa{
+  background-image: url("~src/app/images/af.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.destinations a{
+  color: black;
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
+  font-size: 25px;
+
+}
+
+

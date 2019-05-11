@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Continent</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let country of countries ">
+      <th scope="row">{{country.id}}</th>
+      <td>{{country.name}}</td>
+      <td>{{country.continentId.continentName}}</td>
+    </tr>
+
+
+    </tbody>
+  </table>
+</div>

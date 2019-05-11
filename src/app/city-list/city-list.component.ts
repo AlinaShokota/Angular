@@ -11,11 +11,11 @@ import {City} from '../shared/model/city';
 })
 export class CityListComponent implements OnInit {
 
-  constructor(private cityServuce: CityService) { }
+  constructor(private cityService: CityService) { }
 
   cities: City[] = new Array();
   ngOnInit() {
-    this.cityServuce.getAllCities().subscribe(value => {
+    this.cityService.getAllCities().subscribe(value => {
       this.cities = value;
     });
     console.log(this.cities);

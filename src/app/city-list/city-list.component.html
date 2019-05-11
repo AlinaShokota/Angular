@@ -2,7 +2,7 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th scope="col">#</th>
+      <!--<th scope="col">#</th>-->
       <th scope="col">Name</th>
       <th scope="col">City</th>
     </tr>
@@ -10,7 +10,6 @@
     <tbody>
 
     <tr *ngFor="let city of cities ">
-      <th scope="row">{{city.id}}</th>
       <td>{{city.name}}</td>
       <td>{{city.countryId.name}}</td>
     </tr>

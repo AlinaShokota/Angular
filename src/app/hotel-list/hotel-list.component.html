@@ -1,23 +1,21 @@
 
-
 <div class="container">
   <table class="table table-striped">
     <thead>
     <tr>
-      <!--<th scope="col">#</th>-->
       <th scope="col">Name</th>
       <th scope="col">City</th>
     </tr>
     </thead>
     <tbody>
 
-    <tr *ngFor="let airport of airports ">
-     <!-- <th scope="row">{{airport.id}}</th> -->
-      <td>{{airport.name}}</td>
-      <td>{{airport.cityId.name}}</td>
+    <tr *ngFor="let hotel of hotels ">
+      <td>{{hotel.name}}</td>
+      <td>{{hotel.cityId.name}}</td>
+      <td>
+        <a href="hotel-editor/{{hotel.id}}" role="button">Modify</a>
+      </td>
     </tr>
-
-
     </tbody>
   </table>
 </div>
