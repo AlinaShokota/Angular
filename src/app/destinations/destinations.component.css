@@ -1,26 +1,6 @@
-
-.content111 {
-  background-image: url("~src/app/images/TravellingTips_TOPBANNER.jpg");
-  background-size: 110%;
-  background-repeat: no-repeat;
-  padding: 20%;
-  margin-top: -5%;
-}
-.trips-container{
+.container{
+  font-family: "Bookman Old Style";
   margin-top: 5%;
-  font-family: "Bookman Old Style";
-}
-
-.form {
-  background-size: cover;
-  width: 110%;
-  background-color: rgba(175, 217, 227, 0.47);
-  margin-top: 40%;
-  margin-left: -5%;
-  padding: 2%;
-  color: black;
-  font-family: "Bookman Old Style";
-  text-align: left;
 }
 
 .card {
@@ -52,13 +32,11 @@
   color: white;
 }
 
-
-
-
 .europe{
   background-image: url("~src/app/images/eu.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
+  text-decoration: none;
 }
 .asia{
   background-image: url("~src/app/images/asia.jpg");
@@ -85,12 +63,12 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
-.destinations a{
+.continents a{
   color: black;
-  font-family: "Comic Sans MS", cursive;
+  text-decoration: none;
+  font-family: "Bookman Old Style";
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: normal;
 
 }
-
-

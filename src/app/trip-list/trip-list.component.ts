@@ -22,7 +22,6 @@ export class TripListComponent implements OnInit {
   trips: Trip[] = new Array();
   promotionTrips: Trip[] = new Array();
   nearestTrips: Trip[] = new Array();
-  europeTrips: Trip[] = new Array();
   airports: Airport[] = new Array();
   airportsInPoland: Airport[] = new Array();
   cities: City[] = new Array();
@@ -41,9 +40,7 @@ export class TripListComponent implements OnInit {
     this.tripService.getNearestTrips().subscribe(value => {
       this.nearestTrips = value;
     });
-    this.tripService.getTripsEurope().subscribe(value => {
-      this.europeTrips = value;
-    });
+
     this.airportService.getAllAirports().subscribe(value => {
       this.airports = value;
     });
@@ -67,11 +64,6 @@ export class TripListComponent implements OnInit {
     });
     console.log(this.trips);
   }
-  clicked(event) {
-    const target = event.target || event.srcElement || event.currentTarget;
-    const idAttr = target.attributes.id;
-    const value = idAttr.nodeValue;
-    alert(value);
-  }
+
 }
 

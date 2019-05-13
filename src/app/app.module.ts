@@ -15,7 +15,11 @@ import { TripListComponent } from './trip-list/trip-list.component';
 import {FormsModule} from '@angular/forms';
 import { OneTripComponent } from './one-trip/one-trip.component';
 import { HotelEditorComponent } from './hotel-editor/hotel-editor.component';
-
+import { TripEditorComponent } from './trip-editor/trip-editor.component';
+import {NgbModule, NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
+import { ImageEditorComponent } from './image-editor/image-editor.component';
+import { TripsByContinentComponent } from './trips-by-continent/trips-by-continent.component';
+import {DestinationsComponent} from './destinations/destinations.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,18 @@ import { HotelEditorComponent } from './hotel-editor/hotel-editor.component';
     HotelListComponent,
     TripListComponent,
     OneTripComponent,
-    HotelEditorComponent
+    HotelEditorComponent,
+    TripEditorComponent,
+    ImageEditorComponent,
+    DestinationsComponent,
+    TripsByContinentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [CountryServiceService],
   bootstrap: [AppComponent]

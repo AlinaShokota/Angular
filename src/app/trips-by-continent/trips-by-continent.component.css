@@ -1,0 +1,38 @@
+.container{
+  background-color: rgba(255, 255, 255, 0.53);
+  font-family: "Bookman Old Style";
+}
+
+.trips-container{
+  margin-top: 5%;
+}
+
+.card {
+  background-image: url("~src/app/images/backgr.jpg");
+  background-size: 30%;
+  width: 100%;
+  min-height: 180px;
+  height: 350px;
+  overflow-x: auto;
+  display: flex;
+  margin-top: 2%;
+  font-family: "Bookman Old Style";
+}
+
+.card--content {
+  background-color: rgba(189, 220, 227, 0.8);
+  min-width: 300px;
+  margin: 0;
+  padding: 10px;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+.card-title{
+  font-size: 250%;
+}
+.btn{
+  background-color: #48767A;
+  color: white;
+}

@@ -13,6 +13,9 @@ export class AirportService {
     return this.http.get<Airport[]>('http://localhost:8085/app/airport/all');
   }
   getAirportsInPoland(): Observable<Airport[]> {
-    return this.http.get<Airport[]>('http://localhost:8085/app/airport//airports-in-Poland');
+    return this.http.get<Airport[]>('http://localhost:8085/app/airport/airportsInPoland');
+  }
+  getAirportsNotInPoland(): Observable<Airport[]> {
+    return this.http.get<Airport[]>('http://localhost:8085/app/airport/airportsNotInPoland');
   }
 }

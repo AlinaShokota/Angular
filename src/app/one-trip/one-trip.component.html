@@ -1,22 +1,90 @@
-
 <div class="container">
-  <div class="card">
-    <table class="table">
-      <tbody>
-      <tr>
-        <td width="30%">
-          <p class="card--content">From: {{trip.airportFrom.name}}</p>
-          <p class="card--content">To: {{trip.airportTo.name}}</p>
-          <p class="card--content">City: {{trip.cityTo.name}}</p>
-          <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
-          <p class="card--content">Departure: {{trip.departureDate}}</p>
-          <p class="card--content">Return: {{trip.returnDate}}</p>
-          <p class="card--content">Price for adult: {{trip.priceForAdult}}</p>
-          <p class="card--content">Price for child: {{trip.priceForChild}}</p>
-
-        </td>
-      </tr>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col-sm">
+      <ngb-carousel class="carusel-custom">
+        <ng-template ngbSlide *ngFor="let image of images">
+          <img src="{{image.url}}" alt="Random first slide" width="500" height="350">
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-sm">
+      <p class="card--content">From: {{trip.airportFrom.name}}</p>
+      <p class="card--content">To: {{trip.airportTo.name}}</p>
+      <p class="card--content">City: {{trip.cityTo.name}}</p>
+      <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+      <p class="card--content">Departure: {{trip.departureDate}}</p>
+      <p class="card--content">Return: {{trip.returnDate}}</p>
+      <p class="card--content">Count of days: {{trip.countOfDays}}</p>
+      <p class="card--content">Price for adult: {{trip.priceForAdult}}</p>
+      <p class="card--content">Price for child: {{trip.priceForChild}}</p><br>
+      <input type="hidden" name="c" style="visibility: hidden" [(ngModel)]="trip.countOfDays">
+    </div>
+    <div class="col-sm">
+      <div>
+        <p>Adults: <input type="number" name="a" (change)="onClick()" [(ngModel)]="a"></p><br>
+        <p>Children: <input type="number" name="c" (change)="onClick()" [(ngModel)]="c"></p><br>
+      </div>
+      <p class="card--content">Price: {{r}}</p>
+      <p><button>Purchase a trip</button></p>
+    </div>
+  </div>
+  <div class="row">
+    <p class="col-sm">Description<br> {{trip.description}}</p>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="container">
+  <ngb-carousel class="carusel-custom">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <img src="{{image.url}}" alt="Random first slide"  style="width: 500px">
+    </ng-template>
+  </ngb-carousel>
+
+  <table>
+    <tr>
+      <td>
+
+      </td>
+      <td width="40%">
+        <p class="card--content">From: {{trip.airportFrom.name}}</p>
+        <p class="card--content">To: {{trip.airportTo.name}}</p>
+        <p class="card--content">City: {{trip.cityTo.name}}</p>
+        <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+        <p class="card--content">Departure: {{trip.departureDate}}</p>
+        <p class="card--content">Return: {{trip.returnDate}}</p>
+        <p class="card--content">Count of days: {{trip.countOfDays}}</p>
+        <p class="card--content">Price for adult: {{trip.priceForAdult}}</p>
+        <p class="card--content">Price for child: {{trip.priceForChild}}</p><br>
+        <p class="card--content">Description<br> {{trip.description}}</p>
+        <input type="hidden" name="c" style="visibility: hidden" [(ngModel)]="trip.countOfDays">
+      </td>
+      <td width="30%">
+        <div>
+          <p>Adults: <input type="number" name="a" (change)="onClick()" [(ngModel)]="a"></p><br>
+          <p>Children: <input type="number" name="c" (change)="onClick()" [(ngModel)]="c"></p><br>
+
+        </div>
+        <p class="card--content">Price: {{r}}</p>
+      </td>
+    </tr>
+  </table>
+</div>
+-->
+

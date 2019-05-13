@@ -1,0 +1,79 @@
+
+<div class="container">
+  <form (ngSubmit)="onSave()" #userForm="ngForm">
+    <input type="hidden" name="id" [(ngModel)]="trip.id">
+
+    <div class="form-group">
+      <label for="airportFrom"><h2>Airport from:</h2></label>
+      <select class="form-control" id="airportFrom" [(ngModel)]="trip.airportFrom" name="airportFrom">
+        <option *ngFor="let airport of airportsInPoland" [value]="airport.id">{{airport.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="airportTo"><h2>Airport to:</h2></label>
+      <select class="form-control" id="airportTo" [(ngModel)]="trip.airportTo" name="airportTo">
+        <option *ngFor="let airport of airportsNotInPoland" [value]="airport.id">{{airport.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="city"><h2>City:</h2></label>
+      <select class="form-control" id="city" [(ngModel)]="trip.cityTo" name="city" (change)="onClick()">
+        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="hotel"><h2>Hotel:</h2></label>
+      <select class="form-control" id="hotel" [(ngModel)]="trip.hotelTo" name="hotel">
+        <option *ngFor="let hotel of hotels" [value]="hotel.id">{{hotel.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="departure"><h2>Departure date:</h2></label>
+      <input type="date" class="form-control" name="departure" id="departure" required [(ngModel)]="trip.departureDate">
+    </div>
+    <div class="form-group">
+      <label for="return"><h2>Return date:</h2></label>
+      <input type="date" class="form-control" name="return" id="return" required [(ngModel)]="trip.returnDate">
+    </div>
+    <div class="form-group">
+      <label for="count"><h2>Count of days:</h2></label>
+      <input type="number" class="form-control" name="count" id="count" required [(ngModel)]="trip.countOfDays">
+    </div>
+    <div class="form-group">
+      <label for="type"><h2>Type</h2></label>
+      <select class="form-control" id="type" name="type" [(ngModel)]="trip.type" required>
+        <option>BB</option>
+        <option>HB</option>
+        <option>FB</option>
+        <option >AI</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="adult"><h2>Price for adult: </h2></label>
+      <input type="number" class="form-control" name="adult" id="adult" required [(ngModel)]="trip.priceForAdult">
+    </div>
+    <div class="form-group">
+      <label for="child"><h2>Price for child: </h2></label>
+      <input type="number" class="form-control" name="child" id="child" required [(ngModel)]="trip.priceForChild">
+    </div>
+    <div class="form-group">
+      <label for="promotion"><h2>Promotion:</h2></label>
+      <select class="form-control" id="promotion" [(ngModel)]="trip.promotion" name="promotion">
+        <option [value]="1">Yes</option>
+        <option [value]="0">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="persons"><h2>Count of persons:</h2></label>
+      <input type="number" class="form-control" name="persons" id="persons" required [(ngModel)]="trip.countOfPersons">
+    </div>
+    <div class="form-group">
+      <label for="description"><h2>Description:</h2></label><br>
+      <textarea type="text" name="description" id="description" [(ngModel)]="trip.description" size="60" placeholder="max lenght 255"
+                maxlength="255" rows="4" cols="50" ></textarea>
+    </div>
+
+    <button type="button" class="btn btn-warning" (click)="goBack()">Back</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -13,6 +13,9 @@ export class HotelService {
   getAllHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>('http://localhost:8085/app/hotel/all');
   }
+  getByCityId(cityId: number): Observable<Hotel[]> {
+    return this.http.get<Hotel[]>('http://localhost:8085/app/hotel/allByCityId?id=' + cityId);
+  }
   save(hotel: Hotel): Observable<Object> {
     return this.http.post('http://localhost:8085/app/hotel/save', hotel);
   }

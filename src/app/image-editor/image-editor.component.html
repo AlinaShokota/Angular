@@ -1,0 +1,25 @@
+<p>
+  image-editor works!
+</p>
+<div class="container">
+  <form (ngSubmit)="onSave()" #userForm="ngForm">
+    <input type="hidden" name="id" [(ngModel)]="image.id">
+    <div class="form-group">
+      <label for="name"><h2>Name</h2></label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="insert image name" required [(ngModel)]="image.name">
+    </div>
+    <div class="form-group">
+      <label for="url"><h2>Url</h2></label>
+      <input type="text" class="form-control" name="url" id="url" placeholder="insert url" required [(ngModel)]="image.url">
+    </div>
+    <div class="form-group">
+      <label for="trip" ><h2>Trip</h2></label>
+      <select class="form-control" id="trip" [(ngModel)]="image.tripId" name="trip" required>
+        <option *ngFor="let trip of trips" [value]="trip.id">{{trip.airportFrom.name}}, {{trip.airportTo.name}}, {{trip.hotelTo.name}}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-warning" (click)="exit()">Exit</button>
+    <button type="button" class="btn btn-danger" (click)="submitExit()">Submit and exit</button>
+    <button type="submit" class="btn btn-primary">Submit and add more</button>
+  </form>
+</div>

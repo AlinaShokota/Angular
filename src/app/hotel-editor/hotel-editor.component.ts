@@ -13,7 +13,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class HotelEditorComponent implements OnInit {
 
-  constructor(private hotelService: HotelService, private cityService: CityService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private hotelService: HotelService, private cityService: CityService, private route: ActivatedRoute,
+              private location: Location) { }
 
   hotel: Hotel = new Hotel();
   cities: City[] = new Array();
@@ -37,10 +38,9 @@ export class HotelEditorComponent implements OnInit {
     this.hotelService.save(this.hotel).subscribe(value => {
       window.location.href = '/hotel-list';
     });
-  //  alert(this.hotel.name + ' was added to DataBase');
-
   }
   goBack(): void {
     this.location.back();
   }
+
 }

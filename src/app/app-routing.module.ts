@@ -10,6 +10,10 @@ import {HotelListComponent} from './hotel-list/hotel-list.component';
 import {TripListComponent} from './trip-list/trip-list.component';
 import {OneTripComponent} from './one-trip/one-trip.component';
 import {HotelEditorComponent} from './hotel-editor/hotel-editor.component';
+import {TripEditorComponent} from './trip-editor/trip-editor.component';
+import {ImageEditorComponent} from './image-editor/image-editor.component';
+import {DestinationsComponent} from './destinations/destinations.component';
+import {TripsByContinentComponent} from './trips-by-continent/trips-by-continent.component';
 const routes: Routes = [
   { path: 'country-list', component: CountryListComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -19,7 +23,11 @@ const routes: Routes = [
   { path: 'hotel-list', component: HotelListComponent },
   { path: 'one-trip/:id', component: OneTripComponent },
   { path: 'hotel-editor', component: HotelEditorComponent },
+  { path: 'trip-editor', component: TripEditorComponent },
   { path: 'hotel-editor/:id', component: HotelEditorComponent },
+  { path: 'image-editor', component: ImageEditorComponent },
+  { path: 'destinations', component: DestinationsComponent },
+  { path: 'trips-by-continent/:continentName', component: TripsByContinentComponent},
   { path: '', component: TripListComponent }
 ];
 @NgModule({
