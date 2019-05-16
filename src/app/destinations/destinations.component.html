@@ -1,15 +1,59 @@
 <div class="container">
+  <div class="image"></div>
   <div class="destinations">
     <h1 class="card-title">Destinations</h1>
-    <table width="100%" border="1">
+    <table width="100%">
       <tr class="continents">
-        <td class="europe" height="150" width="300"><a routerLink="/trips-by-continent/Europe">Europe</a></td>
-        <td class="asia" height="150" width="300"><a routerLink="/trips-by-continent/Asia">Asia</a></td>
-        <td class="australia" height="150" width="300"><a routerLink="/trips-by-continent/Australia">Australia</a></td>
-        <td class="samerica" height="150" width="300"><a routerLink="/trips-by-continent/South America">South <br>America</a></td>
-        <td class="namerica" height="150" width="300"><a routerLink="/trips-by-continent/North America">North <br>America</a></td>
-        <td class="africa" height="150" width="300"><a routerLink="/trips-by-continent/Africa}">Africa</a></td>
+        <td class="europe" height="150" width="300"></td>
+        <td class="australia" height="150" width="300"></td>
+        <td class="asia" height="150" width="300"></td>
+        <td class="samerica" height="150" width="300"></td>
+        <td class="namerica" height="150" width="300"></td>
+        <td class="africa" height="150" width="300"></td>
+      </tr>
+      <tr class="continents">
+        <td><a routerLink="/trips-by-continent/Europe">Europe</a></td>
+        <td><a routerLink="/trips-by-continent/Australia">Australia</a></td>
+        <td><a routerLink="/trips-by-continent/Asia">Asia</a></td>
+        <td><a routerLink="/trips-by-continent/South America">South <br>America</a></td>
+        <td><a routerLink="/trips-by-continent/North America">North <br>America</a></td>
+        <td><a routerLink="/trips-by-continent/Africa">Africa</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="img2"></div>
+  <h1 class="card-title">Countries</h1>
+  <div class="item" *ngFor="let c of countries">
+    <img src="assets/images/{{c.imageUrl}}" width="55" height="55">
+    <a class="caption" routerLink="/trips-by-country/{{c.name}}">{{c.name}}</a>
+  </div>
+
+</div>
+<!--
+<div class="container">
+  <div class="destinations">
+    <h1 class="card-title">Countries</h1>
+    <table width="100%">
+      <tr class="countries">
+        <td *ngFor="let c of countries" style="width: 50px"><img src="assets/images/{{c.imageUrl}}" width="55" height="55"></td>
+      </tr>
+      <tr class="countries">
+        <td *ngFor="let c of countries"><a routerLink="/trips-by-continent/{{c.name}}">{{c.name}}</a></td>
       </tr>
     </table>
   </div>
 </div>
+
+
+    <div class="co">
+      <h1 class="card-title">Countries</h1>
+      <div class="item" *ngFor="let c of countries">
+        <img src="assets/images/{{c.imageUrl}}" width="55" height="55">
+        <p><a routerLink="/trips-by-continent/{{c.name}}">{{c.name}}</a></p>
+      </div>
+    </div>
+  </div>
+-->
+
+

@@ -1,19 +1,30 @@
 <div class="container">
+  <h1>Countries</h1>
+  <a routerLink="/country-editor">
+    <button type="button" class="btn btn-success" style="float: right"> Add new Country</button>
+  </a>
   <table class="table table-striped">
     <thead>
     <tr>
-      <!--<th scope="col">#</th>-->
+      <th scope="col">№</th>
       <th scope="col">Name</th>
       <th scope="col">Continent</th>
+      <th scope="col">Image</th>
     </tr>
     </thead>
     <tbody>
     
     <tr *ngFor="let country of countries ">
-      <!--<th scope="row">{{country.id}}</th>-->
+      <td class="iter"></td>
      <td>{{country.name}}</td>
      <td>{{country.continentId.continentName}}</td>
-
+     <td>{{country.imageUrl}}</td>
+      <td>
+        <a href="country-editor/{{country.id}}" role="button"><button type="button" class="btn btn-primary">Modify</button></a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="delete(country.id)">Delete</button>
+      </td>
    </tr>
 
 

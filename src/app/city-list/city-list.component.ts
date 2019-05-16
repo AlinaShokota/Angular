@@ -20,5 +20,10 @@ export class CityListComponent implements OnInit {
     });
     console.log(this.cities);
   }
+  delete(id: number) {
+    this.cityService.delete(id).subscribe(value => {
+      window.location.href = '/city-list';
+    });
+  }
 
 }

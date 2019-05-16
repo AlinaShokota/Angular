@@ -1,24 +1,35 @@
-.menu{
+.menu {
   width: 100%;
   overflow: auto;
-  background-image: url("~src/app/images/TravellingTips_TOPBANNER.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-size: 9%;
   padding: auto;
+  background-color: #ccccff;
+  background-image: url("~src/app/images/cloud.png"), url("~src/app/images/cloud.png"), url("~src/app/images/cloud.png"),
+  url("~src/app/images/cloud.png"), url("images/bluecloud.png"), url("images/bluecloud.png"), url("images/bluecloud.png");
+  background-position: left 20px top 22%, right 20px top 40%, left 20px top 60%, right 20px top 80%, right 25% top 27%,
+  left 25% top 48%, right 25% top 70%;
+  opacity: 1;
+  background-repeat: no-repeat;
 }
+
 .menu a {
   float: left;
   padding: 20px;
   color: black;
   text-decoration: none;
-  font-family: "Bookman Old Style";
+  font-family: "Arial Black", Gadget, sans-serif;
   font-size: 20px;
-  width: fit-content;
   text-align: center;
 
 }
-.menu a:hover{
-  background-color: rgba(138, 188, 199, 0.56);
+
+.menu ul {
+  background-color: rgba(92, 92, 214, 0.67);
 }
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.63);
+}
+
 
 

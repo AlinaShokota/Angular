@@ -22,4 +22,7 @@ export class HotelService {
   getHotel(id: number): Observable<Hotel> {
     return this.http.get<Hotel>('http://localhost:8085/app/hotel/getHotel?id=' + id);
   }
+  delete(id: number): Observable<Object> {
+    return this.http.post('http://localhost:8085/app/hotel/delete', id);
+  }
 }

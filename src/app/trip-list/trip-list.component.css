@@ -1,42 +1,62 @@
+.container{
+  background-color: rgba(255, 255, 255, 0.6);
+  width: fit-content;
+  height: fit-content;
 
-.content111 {
-  background-image: url("~src/app/images/TravellingTips_TOPBANNER.jpg");
-  background-size: 110%;
+}
+.top {
+  background-image: url("img/top.png");
+  background-size: 85%;
   background-repeat: no-repeat;
   padding: 20%;
-  margin-top: -5%;
+  margin-left: 50%;
+}
+.text{
+  margin-left: -50%;
+  margin-top: -30%;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 62px;
+  color: #5c5cd6;
+  font-weight: bold;
+}
+.trips{
+  margin-top: -1%;
+  background-image: url("~src/app/images/2.png"),url("~src/app/images/2.png"),url("~src/app/images/2.png");
+  background-position: left 2% top 3%, right 2% top 30%, left 2% top 60%;
+  background-size: 20%;
+  background-repeat: no-repeat;
 }
 .trips-container{
-  margin-top: 5%;
-  font-family: "Bookman Old Style";
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 
-.form {
+.form-inline {
   background-size: cover;
-  width: 110%;
-  background-color: rgba(175, 217, 227, 0.47);
-  margin-top: 40%;
-  margin-left: -5%;
+  width: 100%;
+  background-color: rgba(92, 92, 214, 0.62);
+  margin-top: 12%;
   padding: 2%;
   color: black;
-  font-family: "Bookman Old Style";
+  font-family: "Arial Black", Gadget, sans-serif;
   text-align: left;
 }
-
+.form input{
+  width: 70%;
+}
 .card {
   background-image: url("~src/app/images/backgr.jpg");
   background-size: 30%;
-  width: 100%;
+  width: 90%;
   min-height: 180px;
   height: 350px;
   overflow-x: auto;
   display: flex;
   margin-top: 2%;
+  margin-left: 5%;
 }
-
 .card--content {
   background-color: rgba(189, 220, 227, 0.8);
-  min-width: 300px;
+  width: 300px;
   margin: 0;
   padding: 10px;
 }
@@ -46,51 +66,40 @@
 }
 .card-title{
   font-size: 250%;
+  margin-top: -2%;
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: #5c5cd6;
+  font-weight: bold;
+
+}
+.img1{
+  background-image: url("~src/app/images/003.png");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: left 50% top 30%;
+  padding: 10%;
+}
+.img2{
+  background-image: url("~src/app/images/чувак.png");
+  background-repeat: no-repeat;
+  background-size: 230px;
+  background-position: left 50% top 30%;
+  padding: 10%;
+}
+.img3{
+  background-image: url("~src/app/images/02.png");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: left 50% top 30%;
+  padding: 10%;
 }
 .btn{
-  background-color: #48767A;
+  background-color: #44598c;
   color: white;
 }
 
 
 
 
-.europe{
-  background-image: url("~src/app/images/eu.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.asia{
-  background-image: url("~src/app/images/asia.jpg");
-  background-size: 105%;
-  background-repeat: no-repeat;
-}
-.australia{
-  background-image: url("~src/app/images/au.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.samerica{
-  background-image: url("~src/app/images/sa.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.namerica{
-  background-image: url("~src/app/images/na.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.africa{
-  background-image: url("~src/app/images/af.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.destinations a{
-  color: black;
-  font-family: "Comic Sans MS", cursive;
-  text-align: center;
-  font-size: 25px;
-
-}
 
 

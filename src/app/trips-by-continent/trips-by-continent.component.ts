@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TripService} from '../shared/service/trip.service';
 import {ActivatedRoute} from '@angular/router';
 import {Trip} from '../shared/model/trip';
@@ -10,9 +10,13 @@ import {Trip} from '../shared/model/trip';
 })
 export class TripsByContinentComponent implements OnInit {
 
-  constructor(private tripService: TripService, private route: ActivatedRoute) { }
+  constructor(private tripService: TripService, private route: ActivatedRoute) {
+  }
+
   trips: Trip[] = new Array();
   continent: string = '';
+  city: string = '';
+
   ngOnInit() {
     const continentName = this.route.snapshot.paramMap.get('continentName');
     this.continent = continentName;
@@ -24,5 +28,4 @@ export class TripsByContinentComponent implements OnInit {
       });
     }
   }
-
 }

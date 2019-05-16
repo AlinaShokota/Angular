@@ -1,0 +1,24 @@
+<div class="container">
+  <form (ngSubmit)="onSave()" #userForm="ngForm">
+    <input type="hidden" name="id" [(ngModel)]="country.id">
+    <div class="form-group">
+      <label for="name"><h2>Country</h2></label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="insert country name" required [(ngModel)]="country.name">
+    </div>
+
+    <div class="form-group">
+      <label for="name"><h2>Image name</h2></label>
+      <input type="text" class="form-control" name="name" id="imgName" placeholder="insert image name as 'country-name.png'" required [(ngModel)]="country.imageUrl">
+    </div>
+
+    <div class="form-group">
+      <label for="countries"><h2>Continent</h2></label>
+      <select class="form-control" id="countries" [(ngModel)]="country.continentId" name="continentId" required>
+        <option *ngFor="let continent of continents" [value]="continent.id">{{continent.continentName}}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-warning" (click)="goBack()">Back</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+

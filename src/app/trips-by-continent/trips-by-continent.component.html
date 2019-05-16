@@ -1,22 +1,12 @@
 <div class="container">
-  <div class="trips-container">
-    <h1 class="card-title">Trips in {{continent}}</h1>
-    <div class="card">
-      <table>
-        <tbody>
-        <tr>
-          <td *ngFor="let trip of trips " width="30%">
-            <p class="card--content">From: {{trip.airportFrom.name}}</p>
-            <p class="card--content">To: {{trip.airportTo.name}}</p>
-            <p class="card--content">City: {{trip.cityTo.name}}</p>
-            <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
-            <p class="card--content">Departure: {{trip.departureDate}}</p>
-            <p class="card--content">Return: {{trip.returnDate}}</p>
-            <button routerLink="/one-trip/{{trip.id}}">Read more</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+  <h1 class="card-title">Trips in {{continent}}</h1>
+  <div class="trips-container" *ngFor="let trip of trips ">
+    <p class="card--content">From: {{trip.airportFrom.name}}</p>
+    <p class="card--content">To: {{trip.airportTo.name}}</p>
+    <p class="card--content">City: {{trip.cityTo.name}}</p>
+    <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+    <p class="card--content">Departure: {{trip.departureDate}}</p>
+    <p class="card--content">Return: {{trip.returnDate}}</p>
+    <a routerLink="/one-trip/{{trip.id}}"> <button type="button" class="btn">Read more</button></a>
   </div>
 </div>

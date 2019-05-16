@@ -1,122 +1,167 @@
 <div class="container">
 
-  <div class="form">
-    <form>
-      <table>
-        <tr>
-          <td>
-            From:
-            <select>
-              <option size="10" *ngFor="let city of citiesInPoland" [value]="cityFrom">{{city.name}}</option>
-            </select>
-          </td>
-          <td>
-            To:
-            <select>
-              <option *ngFor="let city of cities" [value]="cityTo">{{city.name}}</option>
-            </select>
-          </td>
-          <td>
-            Departure date:
-            <input type="date" name="departureDate">
-          </td>
-          <td>
-            Return date:
-            <input type="date" name="returnDate">
-          </td>
-          <td>
-            Count of days:
-            <input type="number" name="countOfDays">
-          </td>
-          <td>
-            Adults: <input type="number" name="adults">
-          </td>
-          <td>
-            Children: <input type="number" name="children">
-          </td>
-          <td>
-            <button type="submit" class="btn">Submit</button>
-          </td>
-        </tr>
-      </table>
-    </form>
+  <div class="top">
   </div>
 
-  <div class="trips-container">
-    <h1 class="card-title">All trips</h1>
-    <div class="card">
-      <table>
-        <tbody>
-        <tr>
-          <td *ngFor="let trip of trips " width="30%">
-            <p class="card--content">From: {{trip.airportFrom.name}}</p>
-            <p class="card--content">To: {{trip.airportTo.name}}</p>
-            <p class="card--content">City: {{trip.cityTo.name}}</p>
-            <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
-            <p class="card--content">Departure: {{trip.departureDate}}</p>
-            <p class="card--content">Return: {{trip.returnDate}}</p>
-            <button routerLink="/one-trip/{{trip.id}}">Read more</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+  <div class="text">let's go<br> travel</div>
+  <form class="form-inline" (ngSubmit)="onCount()">
+    <div class="col-auto">
+      <label class="sr-only" for="countOfDays2">Count of days</label>Count of days:<br>
+      <input type="number" class="form-control mb-2 mr-sm-2" id="countOfDays2" name="countOfDays2" [(ngModel)]="myCount"
+             placeholder="Count of days" min="1" max="20">
     </div>
-  </div>
-
-  <div class="trips-container">
-    <h1 class="card-title">Promotion trips</h1>
-    <div class="card">
-      <table>
-        <tbody>
-        <tr>
-          <td *ngFor="let trip of promotionTrips " width="30%">
-            <p class="card--content">From: {{trip.airportFrom.name}}</p>
-            <p class="card--content">To: {{trip.airportTo.name}}</p>
-            <p class="card--content">City: {{trip.cityTo.name}}</p>
-            <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
-            <p class="card--content">Departure: {{trip.departureDate}}</p>
-            <p class="card--content">Return: {{trip.returnDate}}</p>
-            <button routerLink="/one-trip/{{trip.id}}">Read more</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-auto"><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-  </div>
-
-  <div class="trips-container">
-    <h1 class="card-title">Nearest trips</h1>
-    <div class="card">
-      <table>
-        <tbody>
-        <tr>
-          <td *ngFor="let trip of nearestTrips " width="30%">
-            <p class="card--content">From: {{trip.airportFrom.name}}</p>
-            <p class="card--content">To: {{trip.airportTo.name}}</p>
-            <p class="card--content">City: {{trip.cityTo.name}}</p>
-            <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
-            <p class="card--content">Departure: {{trip.departureDate}}</p>
-            <p class="card--content">Return: {{trip.returnDate}}</p>
-            <button routerLink="/one-trip/{{trip.id}}">Read more</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+  </form>
+  <form class="form-inline" (ngSubmit)="onAirF()">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="mr-sm-2 sr-only" for="airportFrom3">From:</label>From:<br>
+        <select class="custom-select mr-sm-2" id="airportFrom3" name="airportFrom3" [(ngModel)]="airpFrom">
+          <option selected>Airport from</option>
+          <option size="10" *ngFor="let city of citiesInPoland" [value]="city.name">{{city.name}}</option>
+        </select>
+      </div>
     </div>
+    <div class="col-auto"> <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <form class="form-inline" (ngSubmit)="onAirT()">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="mr-sm-2 sr-only" for="airportTo2">To:</label>To:<br>
+        <select class="custom-select mr-sm-2" id="airportTo2" name="airportTo2" [(ngModel)]="airpT">
+          <option selected>Airport To</option>
+          <option size="10" *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-auto"> <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <form class="form-inline" (ngSubmit)="onDep()">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <div class="col-auto">
+          <label class="sr-only" for="departureDate2">Departure date</label>Departure date:<br>
+          <input type="date" class="form-control mb-2 mr-sm-2" id="departureDate2" name="departureDate2" [(ngModel)]="depDate">
+        </div>
+      </div>
+    </div>
+    <div class="col-auto"> <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <form class="form-inline" #userForm="ngForm">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="mr-sm-2 sr-only" for="airportFrom">From:</label>From:<br>
+        <select class="custom-select mr-sm-2" id="airportFrom">
+          <option selected>Airport from</option>
+          <option size="10" *ngFor="let city of citiesInPoland" [value]="city.name">{{city.name}}</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <label class="mr-sm-2 sr-only" for="airportTo">To:</label>To:<br>
+        <select class="custom-select mr-sm-2" id="airportTo">
+          <option selected>Airport to</option>
+          <option size="10" *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="departureDate">Departure date</label>Departure date:<br>
+        <input type="date" class="form-control mb-2 mr-sm-2" id="departureDate">
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="returnDate">Return date</label>Return date:<br>
+        <input type="date" class="form-control mb-2 mr-sm-2" id="returnDate">
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="countOfDays">Count of days</label>Count of days:<br>
+        <input type="number" class="form-control mb-2 mr-sm-2" id="countOfDays" placeholder="Count of days" min="1">
+
+      </div>
+      <div class="col-auto"><br>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="trips">
+    <div class="trips-container">
+      <div class="img1"></div>
+      <h1 class="card-title">All trips</h1>
+      <div class="card">
+        <table>
+          <tbody>
+          <tr>
+            <td *ngFor="let trip of trips " width="30%">
+              <p class="card--content">From: {{trip.airportFrom.name}}</p>
+              <p class="card--content">To: {{trip.airportTo.name}}</p>
+              <p class="card--content">City: {{trip.cityTo.name}}</p>
+              <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+              <p class="card--content">Departure: {{trip.departureDate}}</p>
+              <p class="card--content">Return: {{trip.returnDate}}</p>
+              <button class="btn" routerLink="/one-trip/{{trip.id}}">Read more</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="trips-container">
+      <div class="img2"></div>
+      <h1 class="card-title">Promotion trips</h1>
+      <div class="card">
+        <table>
+          <tbody>
+          <tr>
+            <td *ngFor="let trip of promotionTrips " width="30%">
+              <p class="card--content">From: {{trip.airportFrom.name}}</p>
+              <p class="card--content">To: {{trip.airportTo.name}}</p>
+              <p class="card--content">City: {{trip.cityTo.name}}</p>
+              <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+              <p class="card--content">Departure: {{trip.departureDate}}</p>
+              <p class="card--content">Return: {{trip.returnDate}}</p>
+              <button class="btn" routerLink="/one-trip/{{trip.id}}">Read more</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="trips-container">
+      <div class="img3"></div>
+      <h1 class="card-title">Nearest trips</h1>
+      <div class="card">
+        <table>
+          <tbody>
+          <tr>
+            <td *ngFor="let trip of nearestTrips " width="30%">
+              <p class="card--content">From: {{trip.airportFrom.name}}</p>
+              <p class="card--content">To: {{trip.airportTo.name}}</p>
+              <p class="card--content">City: {{trip.cityTo.name}}</p>
+              <p class="card--content">Hotel: {{trip.hotelTo.name}}</p>
+              <p class="card--content">Departure: {{trip.departureDate}}</p>
+              <p class="card--content">Return: {{trip.returnDate}}</p>
+              <button class="btn" routerLink="/one-trip/{{trip.id}}">Read more</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-destinations></app-destinations>
   </div>
-
-<app-destinations></app-destinations>
-
 </div>
-
-
-
-
-
-
-
-
-
 
 <!--
 <div class="content">

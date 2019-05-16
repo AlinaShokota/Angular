@@ -1,24 +1,32 @@
 
 <div class="container">
-<form (ngSubmit)="onSave()" #userForm="ngForm">
+<form (ngSubmit)="onSave()" #hotelForm="ngForm">
   <input type="hidden" name="id" [(ngModel)]="hotel.id">
   <div class="form-group">
     <label for="name"><h2>Name</h2></label>
-    <input type="text" class="form-control" name="name" id="name" placeholder="insert hotel name" required [(ngModel)]="hotel.name">
+    <input type="text" class="form-control" name="name" id="name" placeholder="insert hotel name" required [(ngModel)]="hotel.name" #hotelName="ngModel">
+    <div [hidden]="hotelName.valid || hotelName.pristine" class="alert alert-danger">
+      Hotel name is required
+    </div>
   </div>
   <div class="form-group">
     <label for="standard"><h2>Standard</h2></label>
-    <select class="form-control" id="standard" name="standard" [(ngModel)]="hotel.standard" required>
+    <select class="form-control" id="standard" name="standard" [(ngModel)]="hotel.standard" required #hotelStandard="ngModel">
       <option>One star</option>
       <option>Two stars</option>
       <option>Three stars</option>
       <option >Four stars</option>
       <option >Five stars</option>
     </select>
+    <div [hidden]="hotelStandard.valid || hotelStandard.pristine" class="alert alert-danger">
+      Hotel standard is required
+    </div>
   </div>
   <div class="form-group">
     <label for="description"><h2>Description</h2></label>
-    <input type="text" class="form-control" name="description" id="description" placeholder="insert description" required [(ngModel)]="hotel.description">
+    <input type="text" class="form-control" name="description" id="description" placeholder="insert description" required [(ngModel)]="hotel.description" #hotelDescription="ngModel">
+    <div [hidden]="hotelDescription.valid || hotelDescription.pristine" class="alert alert-danger">Description is required</div>
+
   </div>
   <div class="form-group">
     <label for="cities"><h2>City</h2></label>

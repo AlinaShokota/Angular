@@ -18,5 +18,10 @@ export class AirportListComponent implements OnInit {
     });
     console.log(this.airports);
   }
+  delete(id: number) {
+    this.airportService.delete(id).subscribe(value => {
+      window.location.href = '/airport-list';
+    });
+  }
 
 }

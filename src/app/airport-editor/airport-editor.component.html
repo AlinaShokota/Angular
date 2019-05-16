@@ -1,0 +1,18 @@
+<div class="container">
+  <form (ngSubmit)="onSave()" #userForm="ngForm">
+    <input type="hidden" name="id" [(ngModel)]="airport.id">
+    <div class="form-group">
+      <label for="name"><h2>Name</h2></label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="insert airport name" required [(ngModel)]="airport.name">
+    </div>
+
+    <div class="form-group">
+      <label for="cities"><h2>City</h2></label>
+      <select class="form-control" id="cities" [(ngModel)]="airport.cityId" name="cityId" required>
+        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-warning" (click)="goBack()">Back</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

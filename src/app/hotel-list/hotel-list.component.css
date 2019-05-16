@@ -1,16 +1,18 @@
-.form{
-  background-color: rgba(189, 220, 227, 0.8);
-  padding: 3%;
-  margin-top: 5%;
+
+.container {
+  background-color: transparent;
+  margin-top: 3%;
+  counter-reset: my-sec-counter;
 }
-.btn{
-  background-color: #48767A;
-  color: white;
+
+.table {
+  background-color: rgba(255, 255, 255, 0.81);
+  text-align: left;
 }
-.container{
-  background-color: rgba(189, 220, 227, 0.8);
-margin-top: 3%;
-}
-.table{
-  background-color: white;
+
+
+.iter::before {
+  /* Increment "my-sec-counter" by 1 */
+  counter-increment: my-sec-counter 1;
+  content: counter(my-sec-counter) ". ";
 }

@@ -21,16 +21,19 @@
     </div>
     <div class="col-sm">
       <div>
-        <p>Adults: <input type="number" name="a" (change)="onClick()" [(ngModel)]="a"></p><br>
-        <p>Children: <input type="number" name="c" (change)="onClick()" [(ngModel)]="c"></p><br>
+        <p>Count of adults:<br><input type="number" name="a" (change)="onClick()" [(ngModel)]="a"></p><br>
+        <p>Count of children:<br><input type="number" name="c" (change)="onClick()" [(ngModel)]="c"></p><br>
       </div>
       <p class="card--content">Price: {{r}}</p>
-      <p><button>Purchase a trip</button></p>
+      <p><button class="btn">Purchase a trip</button></p>
     </div>
   </div>
   <div class="row">
-    <p class="col-sm">Description<br> {{trip.description}}</p>
+    <p class="col-sm" style="font-weight: bold;font-size: large">Description</p>
+
+    <p>{{trip.description}}</p>
   </div>
+
 </div>
 
 

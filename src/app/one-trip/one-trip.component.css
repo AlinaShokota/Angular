@@ -1,8 +1,13 @@
 .container {
   background-color: rgba(255, 255, 255, 0.73);
-  padding: 3%;
-  margin-top: 4%;
-  font-family: "Bookman Old Style";
+  padding-bottom: 10%;
+  padding-top: 3%;
+  margin-top: 3%;
+  font-family: "Arial Black", Gadget, sans-serif;
+  background-image: url("~src/app/images/onetrip.png");
+  background-position: left -1% bottom -1%;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .carusel-custom {
@@ -11,5 +16,11 @@
 .col-sm{
   text-align: left;
 }
+.img{
+  margin-top: -5%;
+}
 
-
+.btn{
+  background-color: #44598c;
+  color: white;
+}

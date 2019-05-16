@@ -1,22 +1,30 @@
-
 <div class="container">
-  <a routerLink="/hotel-editor"><button class="btn btn-primary"> Add new Hotel</button></a>
+  <h1>Hotels</h1>
+  <a routerLink="/hotel-editor">
+    <button type="button" class="btn btn-success" style="float: right"> Add new Hotel</button>
+  </a>
   <table class="table table-striped">
     <thead>
     <tr>
+      <th scope="col">№</th>
       <th scope="col">Name</th>
       <th scope="col">City</th>
     </tr>
     </thead>
     <tbody>
-
     <tr *ngFor="let hotel of hotels ">
-      <td>{{hotel.name}}</td>
+      <td class="iter"></td>
+      <td style="text-align: left">{{hotel.name}}</td>
       <td>{{hotel.cityId.name}}</td>
       <td>
-        <a href="hotel-editor/{{hotel.id}}" role="button">Modify</a>
+        <a href="hotel-editor/{{hotel.id}}" role="button"><button type="button" class="btn btn-primary">Modify</button></a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="delete(hotel.id)">Delete</button>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
+
+

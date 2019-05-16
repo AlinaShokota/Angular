@@ -18,5 +18,10 @@ export class CountryListComponent implements OnInit {
     });
     console.log(this.countries);
   }
+  delete(id: number) {
+    this.countryService.delete(id).subscribe(value => {
+      window.location.href = '/country-list';
+    });
+  }
 
 }

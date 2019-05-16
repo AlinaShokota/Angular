@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Country} from '../model/country';
+import {City} from '../model/city';
 
 @Injectable({
   providedIn: 'root'
@@ -15,19 +16,13 @@ export class CountryServiceService {
   getAllEurope(): Observable<Country[]> {
     return this.http.get<Country[]>('http://localhost:8085/app/country/europe');
   }
-  getAsia(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8085/app/country/asia');
+  delete(id: number): Observable<Object> {
+    return this.http.post('http://localhost:8085/app/country/delete', id);
   }
-  getAfrica(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8085/app/country/getAfrica');
+  save(country: Country): Observable<Object> {
+    return this.http.post('http://localhost:8085/app/country/save', country);
   }
-  getNorthAmerica(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8085/app/country/north-america');
-  }
-  getSouthAmerica(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8085/app/country/south-america');
-  }
-  getAustralia(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8085/app/country/australia');
+  getCountry(id: number): Observable<Country> {
+    return this.http.get<Country>('http://localhost:8085/app/city/getCountry?id=' + id);
   }
 }

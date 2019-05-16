@@ -14,20 +14,34 @@ import {TripEditorComponent} from './trip-editor/trip-editor.component';
 import {ImageEditorComponent} from './image-editor/image-editor.component';
 import {DestinationsComponent} from './destinations/destinations.component';
 import {TripsByContinentComponent} from './trips-by-continent/trips-by-continent.component';
+import {TripByCountryComponent} from './trip-by-country/trip-by-country.component';
+import {AirportEditorComponent} from './airport-editor/airport-editor.component';
+import {CityEditorComponent} from './city-editor/city-editor.component';
+import {CountryEditorComponent} from './country-editor/country-editor.component';
+import {TripSearchComponent} from './trip-search/trip-search.component';
 const routes: Routes = [
   { path: 'country-list', component: CountryListComponent },
+  { path: 'country-editor/:id', component: CountryEditorComponent },
+  { path: 'country-editor', component: CountryEditorComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'airport-list', component: AirportListComponent },
+  { path: 'airport-editor/:id', component: AirportEditorComponent },
+  { path: 'airport-editor', component: AirportEditorComponent },
   { path: 'city-list', component: CityListComponent },
+  { path: 'city-editor/:id', component: CityEditorComponent },
+  { path: 'city-editor', component: CityEditorComponent },
   { path: 'europe', component: EuropeListComponent },
   { path: 'hotel-list', component: HotelListComponent },
   { path: 'one-trip/:id', component: OneTripComponent },
   { path: 'hotel-editor', component: HotelEditorComponent },
   { path: 'trip-editor', component: TripEditorComponent },
   { path: 'hotel-editor/:id', component: HotelEditorComponent },
+  { path: 'trip-search/:countOfDays', component: TripSearchComponent },
+  { path: 'trip-search', component: TripSearchComponent },
   { path: 'image-editor', component: ImageEditorComponent },
   { path: 'destinations', component: DestinationsComponent },
   { path: 'trips-by-continent/:continentName', component: TripsByContinentComponent},
+  { path: 'trips-by-country/:name', component: TripByCountryComponent},
   { path: '', component: TripListComponent }
 ];
 @NgModule({

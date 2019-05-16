@@ -20,6 +20,11 @@ import {NgbModule, NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 import { ImageEditorComponent } from './image-editor/image-editor.component';
 import { TripsByContinentComponent } from './trips-by-continent/trips-by-continent.component';
 import {DestinationsComponent} from './destinations/destinations.component';
+import { TripByCountryComponent } from './trip-by-country/trip-by-country.component';
+import { AirportEditorComponent } from './airport-editor/airport-editor.component';
+import { CityEditorComponent } from './city-editor/city-editor.component';
+import { CountryEditorComponent } from './country-editor/country-editor.component';
+import { TripSearchComponent } from './trip-search/trip-search.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,12 @@ import {DestinationsComponent} from './destinations/destinations.component';
     TripEditorComponent,
     ImageEditorComponent,
     DestinationsComponent,
-    TripsByContinentComponent
+    TripsByContinentComponent,
+    TripByCountryComponent,
+    AirportEditorComponent,
+    CityEditorComponent,
+    CountryEditorComponent,
+    TripSearchComponent
   ],
   imports: [
     BrowserModule,

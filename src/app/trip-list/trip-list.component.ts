@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TripService} from '../shared/service/trip.service';
 import {Trip} from '../shared/model/trip';
 import {Airport} from '../shared/model/airport';
@@ -17,7 +17,9 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./trip-list.component.css']
 })
 export class TripListComponent implements OnInit {
-  constructor(private tripService: TripService, private http: HttpClient, private countryService: CountryServiceService, private airportService: AirportService, private cityService: CityService, private continentService: ContinentService) { }
+  constructor(private tripService: TripService, private http: HttpClient, private countryService: CountryServiceService,
+              private airportService: AirportService, private cityService: CityService, private continentService: ContinentService) {
+  }
 
   trips: Trip[] = new Array();
   promotionTrips: Trip[] = new Array();
@@ -27,8 +29,11 @@ export class TripListComponent implements OnInit {
   cities: City[] = new Array();
   citiesInPoland: City[] = new Array();
   countriesEurope: Country[] = new Array();
-  countriesAsia: Country[] = new Array();
   continents: Continent[] = new Array();
+  myCount: number = 1;
+  airpFrom: string = '';
+  airpT: string = '';
+  depDate: string = '';
 
   ngOnInit() {
     this.tripService.getAllTrips().subscribe(value => {
@@ -56,14 +61,26 @@ export class TripListComponent implements OnInit {
     this.countryService.getAllEurope().subscribe(value => {
       this.countriesEurope = value;
     });
-    this.countryService.getAsia().subscribe(value => {
-      this.countriesAsia = value;
-    });
     this.continentService.getAllContinents().subscribe(value => {
       this.continents = value;
     });
     console.log(this.trips);
   }
+
+  onCount() {
+      window.location.href = '/trip-search/' + this.myCount;
+  }
+  onAirF() {
+    window.location.href = '/trip-search/' + this.airpFrom;
+  }
+  onAirT() {
+    window.location.href = '/trip-search/' + this.airpT;
+  }
+  onDep() {
+    window.location.href = '/trip-search/' + this.depDate;
+  }
+
+
 
 }
 

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {HotelService} from '../shared/service/hotel.service';
 import {Hotel} from '../shared/model/hotel';
 import {CityService} from '../shared/service/city.service';
 import {City} from '../shared/model/city';
 import {HotelFeedback} from '../shared/feedBackModel/hotel-feedback';
 import {HttpClient} from '@angular/common/http';
+import {MdbTableDirective} from 'angular-bootstrap-md';
 
 @Component({
   selector: 'app-hotel-list',
@@ -12,20 +13,15 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./hotel-list.component.css']
 })
 export class HotelListComponent implements OnInit {
-model: HotelFeedback = {
-  name: '',
-  standard: '',
-  city: '',
-  description: '',
-};
-  constructor(private hotelService: HotelService, private cityService: CityService) { }
+  constructor(private hotelService: HotelService, private cityService: CityService) {
+  }
 
   hotels: Hotel[] = new Array();
   cities: City[] = new Array();
-  ngOnInit() {
 
+
+  ngOnInit() {
     this.hotelService.getAllHotels().subscribe(value => {
-      console.log("oninit");
       this.hotels = value;
     });
     this.cityService.getAllCities().subscribe(value => {
@@ -33,4 +29,11 @@ model: HotelFeedback = {
     });
     console.log(this.hotels);
   }
+
+  delete(id: number) {
+    this.hotelService.delete(id).subscribe(value => {
+      window.location.href = '/hotel-list';
+    });
+  }
+
 }
